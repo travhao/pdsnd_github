@@ -250,9 +250,9 @@ def user_stats(df):
     
     # ACTION: Display earliest, most recent, and most common year of birth
     try:
-        print("Earliest year of birth:",df['Birth Year'].dropna().astype(int).min())
-        print("Most recent year of birth:",df['Birth Year'].dropna().astype(int).max())
-        print("Most common year of birth:",df['Birth Year'].replace(0, np.nan).dropna().astype(int).mode()[0])
+        print("Earliest birth year:",df['Birth Year'].dropna().astype(int).min())
+        print("Most recent birth year:",df['Birth Year'].dropna().astype(int).max())
+        print("Most common birth year:",df['Birth Year'].replace(0, np.nan).dropna().astype(int).mode()[0])
         print
     except:
         pass
