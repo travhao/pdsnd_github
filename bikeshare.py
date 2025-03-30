@@ -47,7 +47,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data! \n')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # ACTION: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     cities = {'chicago','new york city', 'washington'}
     city_map = {
         'chicago':'chicago', 'new york city':'new_york_city', 'washington':'washington'
@@ -65,7 +65,7 @@ def get_filters():
             print("You entered: ", list(city_input)[0])
             
     
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # ACTION: get user input for month (all, january, february, ... , june)
     month_rosetta = {
         1: 'jan', 2: 'feb', 3: 'mar', 4: 'apr', 5: 'may', 6: 'jun',
         7: 'jul', 8: 'aug', 9: 'sep', 10: 'oct', 11: 'nov', 12: 'dec'
@@ -92,7 +92,7 @@ def get_filters():
             
 
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # ACTION: get user input for day of week (all, monday, tuesday, ... sunday)
     days = {'sun','mon','tue','wed','thu','fri','sat','all'}
     week_rosetta = {
         0: 'mon', 1: 'tue', 2: 'wed', 3: 'thu', 4: 'fri', 5: 'sat', 6: 'sun'
@@ -158,14 +158,14 @@ def time_stats(df):
         7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'
     }
 
-    # TO DO: display the most common month
+    # ACTION: display the most common month
     print("Most common month: ",month_rosetta[df['dt'].dt.month.mode()[0]])
 
 
-    # TO DO: display the most common day of week
+    # ACTION: display the most common day of week
     print("Most common day of week: ",week_rosetta[df['dt'].dt.dayofweek.mode()[0]])
 
-    # TO DO: display the most common start hour
+    # ACTION: display the most common start hour
     print("Most common start hour: ",df['dt'].dt.hour.mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -178,7 +178,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # ACTION: display most commonly used start station
     print("Most commonly used start station is",
           df['Start Station'].value_counts(ascending = False).reset_index().iloc[0,0],
          "with",
@@ -186,14 +186,14 @@ def station_stats(df):
          )
 
 
-    # TO DO: display most commonly used end station
+    # ACTION: display most commonly used end station
     print("Most commonly used end station is",
           df['End Station'].value_counts(ascending = False).reset_index().iloc[0,0],
          "with",
           df['End Station'].value_counts(ascending = False).reset_index().iloc[0,1],"entries."
          )
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # ACTION: display most frequent combination of start station and end station trip
     print("Most commonly used station combination is",
           df['start_end'].value_counts(ascending = False).reset_index().iloc[0,0],
          "with",
@@ -211,13 +211,13 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # ACTION: display total travel time
     total_time = np.round(df['Trip Duration'].sum()/60/60,2)
     avg_time = np.round(df['Trip Duration'].mean()/60,2)
     print("In total, riders spent {} hours in bikeshare trips.".format(total_time))
 
 
-    # TO DO: display mean travel time
+    # ACTION: display mean travel time
     print("The average rider trip was {} minutes long.".format(avg_time))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -232,13 +232,13 @@ def user_stats(df):
     
     unique_user_types = len(df['User Type'].unique())
 
-    # TO DO: Display counts of user types
+    # ACTION: Display counts of user types
     user_types = pd.DataFrame(df['User Type'].value_counts(ascending = False)).reset_index()
     for item in np.arange(0,len(df['User Type'].dropna().unique())):
         print("{}: {} records".format(user_types.iloc[item,0],user_types.iloc[item,1]))
 
 
-    # TO DO: Display counts of gender
+    # ACTION: Display counts of gender
     try:
         gender_types = pd.DataFrame(df['Gender'].value_counts(ascending = False)).reset_index()
         genders = len(df['Gender'].dropna().unique())
@@ -248,7 +248,7 @@ def user_stats(df):
         pass
 
     
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # ACTION: Display earliest, most recent, and most common year of birth
     try:
         print("Earliest year of birth:",df['Birth Year'].dropna().astype(int).min())
         print("Most recent year of birth:",df['Birth Year'].dropna().astype(int).max())
