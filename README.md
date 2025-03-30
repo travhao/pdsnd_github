@@ -3,6 +3,9 @@
 ### Date created
 March 30, 2025
 
+### Author
+Travis Helm (starting from Udacity template)
+
 # Bikeshare Final Project
 
 ### Description
