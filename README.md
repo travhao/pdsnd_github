@@ -28,4 +28,4 @@ to understand what type of data the user would like to return. Some highlights a
 - bikeshare.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+The original data files for this project were provided by [Motivate] (https://motivateco.com/)
